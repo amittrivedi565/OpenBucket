@@ -6,7 +6,4 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(OpenBucket main.cpp
         lib/BucketManager.cpp
         include/BucketManager.h
-        include/StorageEngine.h
-        include/Object.h
-        include/PutObjectRequest.h
-        lib/StorageEngine.cpp)
+)
