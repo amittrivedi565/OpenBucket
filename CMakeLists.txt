@@ -3,4 +3,10 @@ project(OpenBucket)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(OpenBucket main.cpp)
+add_executable(OpenBucket main.cpp
+        BucketManager.cpp
+        headers/BucketManager.h
+        headers/StorageEngine.h
+        headers/Object.h
+        headers/PutObjectRequest.h
+        StorageEngine.cpp)
