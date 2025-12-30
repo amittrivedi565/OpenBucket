@@ -5,10 +5,9 @@
 
 class BucketManager {
 public:
-     BucketManager(const std::string& bucketName);
-
-    bool create() const; // create bucket directory
-    bool destroy() const; // remove bucket directory
+    BucketManager(const std::string& bucketName);
+    bool create() const;
+    bool destroy() const;
 
 private:
     std::string bucketName;
