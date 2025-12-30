@@ -45,7 +45,7 @@ int main() {
                 return;
             }
 
-            const BucketManager bm(bucketName);
+            BucketManager bm(bucketName);
 
             if (bm.destroy()) {
                 res.status = 200;

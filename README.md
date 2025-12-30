@@ -13,11 +13,16 @@ OpenBucket is object storage service stores, not file system.
 ```arc
 HTTP Request
    ↓
-HTTP Server (parser)
+HTTP Server
    ↓
-PutObjectRequest / GetObjectRequest
+ Methods
    ↓
 StorageEngine
    ↓
 Filesystem
 ```
+
+### UML Diagram
+
+---
+![UML Diagram](docs/uml_diagram.png)
