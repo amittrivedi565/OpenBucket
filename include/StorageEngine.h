@@ -5,8 +5,8 @@
 #include "fstream"
 class StorageEngine {
 public:
-    static bool putObject(Object& obj, std::ifstream& data);
-    bool deleteObject(std::string key);
+    bool putObject(Object& obj, std::ifstream& data);
+    bool deleteObject(const std::string& bucketName, const std::string& key);
 };
 
 #endif //OPENBUCKET_STORAGE_ENGINE_H

@@ -13,7 +13,6 @@ bool StorageEngine::putObject(Object& obj, std::ifstream& data) {
 
         fs::path path = fs::path("./data") / bucketName / key;
         fs::create_directories(path.parent_path());
-
         std::ofstream file(path, std::ios::binary);
         if (!file) return false;
 
@@ -22,6 +21,17 @@ bool StorageEngine::putObject(Object& obj, std::ifstream& data) {
 
         obj.filePath = path.string();
         obj.fileSize = fs::file_size(path);
+        return true;
+    }catch (std::exception& e) {
+        std::cerr << e.what() << std::endl;
+        return false;
+    }
+}
+
+bool StorageEngine::deleteObject(const std::string& bucketName, const std::string& key) {
+    try {
+        fs::path path = fs::path("./data") / bucketName / key;
+        fs::remove(path);
         return true;
     }catch (std::exception& e) {
         std::cerr << e.what() << std::endl;

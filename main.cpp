@@ -62,6 +62,5 @@ int main() {
 
     std::cout << "Server started at http://localhost:8080\n";
     server.listen("0.0.0.0", 8080);
-
     return 0;
 }
