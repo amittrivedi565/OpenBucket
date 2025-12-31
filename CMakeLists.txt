@@ -9,4 +9,6 @@ add_executable(OpenBucket main.cpp
         include/StorageEngine.h
         lib/StorageEngine.cpp
         include/Object.h
+        include/HttpServer.h
+        lib/HttpServer.cpp
 )
