@@ -6,6 +6,12 @@
 
 namespace fs = std::filesystem;
 
+/**
+ *
+ * @param obj Typeof Object class, contains information about content to be uploaded
+ * @param data Input stream for saving
+ * @return boolean, true if operation is success else false
+ */
 bool StorageEngine::putObject(Object& obj, std::ifstream& data) {
     try {
         std::string bucketName = obj.bucketName;
@@ -28,6 +34,12 @@ bool StorageEngine::putObject(Object& obj, std::ifstream& data) {
     }
 }
 
+/**
+ *
+ * @param bucketName bucket in which content resides and to be deleted
+ * @param key filename which to be deleted
+ * @return boolean, true if success else false
+ */
 bool StorageEngine::deleteObject(const std::string& bucketName, const std::string& key) {
     try {
         fs::path path = fs::path("./data") / bucketName / key;

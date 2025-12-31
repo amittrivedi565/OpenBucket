@@ -2,10 +2,17 @@
 #include "../include/BucketManager.h"
 #include <iostream>
 
+/**
+ * Default constructor used to init HTTP server port and to register all routes
+ * @param port HTTP server port implicitly passed
+ */
 HttpServer::HttpServer(int port) : port(port) {
     registerRoutes();
 }
 
+/**
+ * All the HTTP server endpoints to be created here and register them
+ */
 void HttpServer::registerRoutes() {
 
     server.Post("/bucket/create",
@@ -62,6 +69,9 @@ void HttpServer::registerRoutes() {
     );
 }
 
+/**
+ * Start HTTP server
+ */
 void HttpServer::start() {
     std::cout << "Server started at http://localhost:" << port << "\n";
     server.listen("0.0.0.0", port);
